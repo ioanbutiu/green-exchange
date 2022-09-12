@@ -176,13 +176,13 @@ export default function Footer(props) {
 				</div>
 				<hr />
 				<div className="d-flex justify-content-between pt-3">
-					<small className="text-muted">©2022 GIX Inc.</small>
+					<small className="text-muted">©2022 Green Exchange, PBC</small>
 					<div className="d-flex gap-4">
-						<Link href="/sitemap">
+						{/* <Link href="/sitemap">
 							<a className="text-muted">
 								<small className="text-primary">Sitemap</small>
 							</a>
-						</Link>
+						</Link> */}
 						<Link href="/privacy-policy">
 							<a className="text-muted">
 								<small className="text-primary">Privacy Policy</small>

@@ -39,8 +39,8 @@ export default function About(props) {
 					<video
 						controls
 						className="d-block w-100 py-5"
-						src="https://www.dropbox.com/sh/43rzo5pf66wgmx5/AABAFLRycx7gqRdcjszt94fxa/Medium%20Version%2009.07.22.mp4?raw=1"
-						poster="/video-poster.png">
+						src="https://www.dropbox.com/s/gk7ngvenwhkeini/Medium%20Version%2009.07.22.mp4?raw=1"
+						poster="/video-poster-2.webp">
 						Sorry, your browser doesn't support embedded videos.
 					</video>
 				</div>

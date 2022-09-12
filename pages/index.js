@@ -114,7 +114,7 @@ export default function Home(props) {
 			<main className="">
 				<ImageSection direction={true} props={imageSectionOne} />
 				<div className="container py-5">
-					<h4 className="display-4">Our solution: measure what matters</h4>
+					<h4 className="display-4">Our solution: focus on what matters</h4>
 					{iconRow && (
 						<div className="row">
 							{iconRow.map((icon) => (

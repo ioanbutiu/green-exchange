@@ -65,11 +65,10 @@ export default function Newsletter() {
 	};
 
 	return (
-		<div className="container-fluid bg-primary text-dark py-4">
+		<div className="container-fluid bg-primary text-dark py-5">
 			<div className="container d-flex flex-column flex-md-row align-items-center px-0 px-md-4">
 				<div className="col-12 col-md-6 pe-0 pe-md-5">
-					<h6>Newsletter</h6>
-					<h4>Stay up to date with our news and insights by subscribing to our regular newsletter</h4>
+					<h3>Stay up to date on our news and progress</h3>
 				</div>
 				<form className="col-12 col-md-6 d-md-flex" onSubmit={handleSubmit}>
 					<input
