@@ -9,15 +9,15 @@ export default function Contact(props) {
 	const { title, hero, info } = props;
 	return (
 		<div className="">
-			<Head>
+			{/* <Head>
 				<title>{title}</title>
 				<meta name="description" content="" />
 				<link rel="icon" href="/favicon.ico" />
-			</Head>
+			</Head> */}
 			<Hero {...hero} />
 			<main className="container">
-				<div className="d-flex flex-row-reverse pt-4" style={{ minHeight: '80vh' }}>
-					<div className="w-50 ps-5">
+				<div className="row" style={{ minHeight: '80vh' }}>
+					<div className="col-12 col-md-6 ps-md-5">
 						<form className="mb-5">
 							<div className="mb-3">
 								<label htmlFor="exampleInputEmail1" className="form-label small">
@@ -46,7 +46,7 @@ export default function Contact(props) {
 							<a className="text-link mt-4">Submit</a>
 						</form>
 					</div>
-					<div className="w-50 pe-5 contact-info-container">
+					<div className="col-12 col-md-6 pe-md-5 contact-info-container">
 						<PortableText value={info} />
 					</div>
 				</div>

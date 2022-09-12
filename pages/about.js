@@ -13,19 +13,19 @@ export default function About(props) {
 	const dark = true;
 	return (
 		<div className="">
-			<Head>
+			{/* <Head>
 				<title>{title}</title>
 				<meta name="description" content="" />
 				<link rel="icon" href="/favicon.ico" />
-			</Head>
+			</Head> */}
 			<Hero {...hero} />
 			<main className="">
 				<div className="container">
 					{textGrid && (
 						<div className="row">
 							{textGrid.map((item) => (
-								<div className="col-6 four-block pb-5" key={item._key}>
-									<div className="col-10">
+								<div className="col-12 col-md-6 four-block pb-4 pb-md-5" key={item._key}>
+									<div className="col-12 col-md-10">
 										<hr />
 										<h6 className="py-3">{item.heading}</h6>
 										<p>{item.text}</p>
@@ -46,16 +46,18 @@ export default function About(props) {
 				</div>
 				<div
 					className={
-						dark ? 'container-fluid bg-dark text-light py-5 my-5' : 'container-fluid bg-light text-dark py-3 my-3'
+						dark
+							? 'container-fluid bg-dark text-light py-0 py-md-5 my-5'
+							: 'container-fluid bg-light text-dark py-3 my-3'
 					}>
-					<div className="container py-5">
-						<div className="row">
-							<div className="col-6">
+					<div className="container px-0 px-md-4 py-4">
+						<div className="d-flex flex-column flex-md-row">
+							<div className="col-12 col-md-6 mb-4">
 								<h2 className="sticky-lg-top" style={{ width: '100%', top: '12%', zIndex: '0' }}>
 									{textSection.heading}
 								</h2>
 							</div>
-							<div className="col-6">
+							<div className="col-12 col-md-6">
 								<PortableText value={textSection.body} />
 							</div>
 						</div>

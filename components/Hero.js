@@ -20,10 +20,6 @@ export default function Hero(props) {
 			<div className="container h-100 py-4 text-light d-flex flex-column justify-content-end bg-transparent">
 				<div className="">
 					<h1 className="">{heading}</h1>
-
-					<div className="mt-4 mb-5 w-50">
-						<p className="lead">{subheading}</p>
-					</div>
 				</div>
 			</div>
 		</div>

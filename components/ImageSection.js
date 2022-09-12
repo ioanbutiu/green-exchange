@@ -10,17 +10,21 @@ function urlFor(source) {
 export default function ImageSection({ direction, props }) {
 	const { text, image, cta } = props;
 	return (
-		<div className={direction ? 'container py-5 my-5 d-flex' : 'container py-5 my-5 d-flex flex-row-reverse'}>
-			<div
-				className={
-					direction
-						? 'd-flex flex-column justify-content-center align-items-start pe-5 w-50'
-						: 'd-flex flex-column justify-content-center align-items-start ps-5 w-50'
-				}>
-				<h4 className="mb-4">{text}</h4>
-				<Cta {...cta} />
+		<div className="container">
+			<div className={direction ? 'my-2 py-2 py-md-5 my-md-5 row' : 'py-5 my-5 row flex-row-reverse'}>
+				<div
+					className={
+						direction
+							? 'd-flex flex-column justify-content-center align-items-start col-12 col-md-6 '
+							: 'd-flex flex-column justify-content-center align-items-start col-12 col-md-6 '
+					}>
+					<h4 className="mb-4">{text}</h4>
+					<div className="mb-4 mb-md-1">
+						<Cta {...cta} />
+					</div>
+				</div>
+				{image && <img src={urlFor(image).url()} className="col-12 col-lg-6" />}
 			</div>
-			{image && <img src={urlFor(image).url()} className="w-50" />}
 		</div>
 	);
 }

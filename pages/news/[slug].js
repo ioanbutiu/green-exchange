@@ -45,18 +45,18 @@ const Article = ({ article }) => {
 	const { title, mainImage, lede, name, authorImage, publishedAt, categories, body } = article;
 	return (
 		<div>
-			<Head>
+			{/* <Head>
 				<title>{title}</title>
 				<meta name="description" content="" />
 				<link rel="icon" href="/favicon.ico" />
-			</Head>
-			<article style={{ marginBottom: '5rem' }}>
+			</Head> */}
+			<article style={{ marginBottom: '4rem' }}>
 				<div className="bg-secondary" style={{ paddingTop: '91px' }}>
 					<div
-						className="d-flex justify-content-start align-items-end position-relative bg-secondary text-light"
-						style={{ height: '60vh', minHeight: '500px', borderTop: '1px solid #0c755c' }}>
+						className="d-md-flex justify-content-start align-items-end position-relative bg-secondary text-light vh-50"
+						style={{ minHeight: '500px', borderTop: '1px solid #0c755c' }}>
 						<div className="container">
-							<div className="w-50 pe-5 pb-4">
+							<div className="col-12 col-md-6 pe-md-5 py-4">
 								{categories && (
 									<div className="mb-3">
 										{categories.map((category) => (
@@ -72,7 +72,19 @@ const Article = ({ article }) => {
 						</div>
 						<img
 							src={urlFor(mainImage).auto('format')}
-							className="w-50 h-100 position-absolute"
+							className="w-50 h-100 d-none d-md-block position-absolute"
+							style={{
+								objectFit: 'cover',
+								objectPosition: `${(mainImage.hotspot ? mainImage.hotspot.x : 0.5) * 100}% ${
+									(mainImage.hotspot ? mainImage.hotspot.y : 0.5) * 100
+								}%`,
+								top: '0',
+								right: '0',
+							}}
+						/>
+						<img
+							src={urlFor(mainImage).auto('format')}
+							className="w-100 d-md-none vh-50"
 							style={{
 								objectFit: 'cover',
 								objectPosition: `${(mainImage.hotspot ? mainImage.hotspot.x : 0.5) * 100}% ${
@@ -84,16 +96,23 @@ const Article = ({ article }) => {
 						/>
 					</div>
 				</div>
-				<div className="container d-flex my-5 py-4">
-					<div className="d-flex flex-column w-25">
-						{authorImage && (
-							<img src={urlFor(authorImage).url()} className="mb-3" style={{ width: '60px', borderRadius: '100%' }} />
-						)}
-						<p>{name}</p>
-						<hr className="w-50" style={{ borderColor: '#ccc' }} />
-						<div>
-							<p className="text-muted m-0">Published</p>
-							<p>
+				<div className="container d-flex flex-column flex-md-row my-1 my-md-5 py-4">
+					<div className="d-flex flex-column col-12 col-md-4 mb-5">
+						<div className="d-flex flex-row flex-md-column align-items-center align-items-md-start">
+							{authorImage && (
+								<img
+									src={urlFor(authorImage).url()}
+									className="mb-2 me-4"
+									style={{ width: '60px', borderRadius: '100%' }}
+								/>
+							)}
+							<p className="mb-0">{name}</p>
+						</div>
+						<hr className="w-50 d-none d-md-block" style={{ borderColor: '#ccc' }} />
+						<hr className="d-md-none w-100" style={{ borderColor: '#ccc' }} />
+						<div className="d-flex flex-row flex-md-column align-items-center align-items-md-start">
+							<p className="text-muted m-0 me-4">Published</p>
+							<p className="m-0">
 								{new Date(publishedAt).toLocaleDateString('en-US', {
 									year: 'numeric',
 									month: 'long',
@@ -101,9 +120,10 @@ const Article = ({ article }) => {
 								})}
 							</p>
 						</div>
-						<hr className="w-50" style={{ borderColor: '#ccc' }} />
-						<div>
-							<p className="text-muted mb-2">Share</p>
+						<hr className="w-50 d-none d-md-block" style={{ borderColor: '#ccc' }} />
+						<hr className="d-md-none w-100" style={{ borderColor: '#ccc' }} />
+						<div className="d-flex flex-row flex-md-column align-items-center align-items-md-start">
+							<p className="text-muted mb-2 me-4">Share</p>
 							<div className="d-flex gap-3">
 								<Link href="">
 									<svg
@@ -144,7 +164,7 @@ const Article = ({ article }) => {
 							</div>
 						</div>
 					</div>
-					<div className="w-50">
+					<div className="col-12 col-md-6">
 						<PortableText value={body} components={ptComponents} />
 					</div>
 				</div>

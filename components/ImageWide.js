@@ -11,9 +11,9 @@ export default function ImageWide(props) {
 	const { text, image, cta } = props;
 	return (
 		<div
-			className="container-fluid my-5 d-flex text-light"
+			className="container-fluid my-5 d-flex text-light full-width-image-block"
 			style={{
-				height: '90vh',
+				height: '60vh',
 				backgroundRepeat: 'no-repeat',
 				backgroundSize: 'cover',
 				backgroundPosition: 'center',

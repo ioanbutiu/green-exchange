@@ -1,7 +1,7 @@
 export default function JoinUs() {
 	return (
 		<div className="container-fluid bg-dark py-5 mt-5">
-			<div className="container py-4">
+			<div className="container px-0 px-md-4">
 				<div className="pb-4">
 					<h6 className="text-primary mb-3">Join our team</h6>
 					<h3 className="text-white">

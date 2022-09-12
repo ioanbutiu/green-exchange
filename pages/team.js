@@ -16,18 +16,18 @@ export default function Team(props) {
 	console.log(team);
 	return (
 		<div className="">
-			<Head>
+			{/* <Head>
 				<title>{title}</title>
 				<meta name="description" content="" />
 				<link rel="icon" href="/favicon.ico" />
-			</Head>
+			</Head> */}
 			<Hero {...hero} />
 			<main className="container">
 				<h4>GIX Team</h4>
 				{team && (
 					<div className="row my-5">
 						{team.map((member) => (
-							<div className="col-4 pb-5" key={member._key}>
+							<div className="col-12 col-md-4 pb-5" key={member._key}>
 								{member.image && (
 									<img src={urlFor(member.image).url()} className="w-50 mb-3" style={{ borderRadius: '100%' }} />
 								)}
@@ -44,7 +44,7 @@ export default function Team(props) {
 				{board && (
 					<div className="row my-5">
 						{board.map((member) => (
-							<div className="col-4 pb-5" key={member._key}>
+							<div className="col-12 col-md-4 pb-5" key={member._key}>
 								{member.image && (
 									<img src={urlFor(member.image).url()} className="w-50 mb-3" style={{ borderRadius: '100%' }} />
 								)}
