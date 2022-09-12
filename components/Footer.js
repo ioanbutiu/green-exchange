@@ -104,7 +104,7 @@ export default function Footer(props) {
 					</div>
 					<div className="d-flex flex-column flex-md-row w-100 gap-5 mt-5 mt-md-0">
 						<div className="d-flex justify-content-between gap-5 ms-md-auto mx-4 mx-md-0">
-							<Link href="/">
+							<a href="https://www.linkedin.com/company/green-impact-exchange/" target="_blank">
 								<svg
 									className="d-block border border-primary p-2"
 									style={{ borderRadius: '1000px' }}
@@ -119,8 +119,8 @@ export default function Footer(props) {
 										fill="#19E280"
 									/>
 								</svg>
-							</Link>
-							<Link href="/">
+							</a>
+							<a target="_blank" href="/">
 								<svg
 									className="d-block border border-primary p-2"
 									style={{ borderRadius: '1000px' }}
@@ -143,8 +143,8 @@ export default function Footer(props) {
 										fill="#19E280"
 									/>
 								</svg>
-							</Link>
-							<Link href="/">
+							</a>
+							<a href="/" target="_blank">
 								<svg
 									className="d-block border border-primary p-2"
 									style={{ borderRadius: '1000px' }}
@@ -159,7 +159,7 @@ export default function Footer(props) {
 										fill="#19E280"
 									/>
 								</svg>
-							</Link>
+							</a>
 						</div>
 						<Link href="/contact">
 							<a className="text-link align-self-center text-primary">Contact us</a>

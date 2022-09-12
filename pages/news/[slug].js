@@ -4,6 +4,8 @@ import client from '../../client';
 import { PortableText } from '@portabletext/react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React, { useState } from 'react';
 
 import Newsletter from '../../components/Newsletter';
 
@@ -43,6 +45,23 @@ const ptComponents = {
 
 const Article = ({ article }) => {
 	const { title, mainImage, lede, name, authorImage, publishedAt, categories, body } = article;
+
+	const [copied, setCopied] = useState(false);
+
+	function copy() {
+		const el = document.createElement('input');
+		el.value = window.location.href;
+		document.body.appendChild(el);
+		el.select();
+		document.execCommand('copy');
+		document.body.removeChild(el);
+		setCopied(true);
+
+		setTimeout(() => {
+			setCopied(false);
+		}, 3000);
+	}
+
 	return (
 		<div>
 			{/* <Head>
@@ -124,8 +143,8 @@ const Article = ({ article }) => {
 						<hr className="d-md-none w-100" style={{ borderColor: '#ccc' }} />
 						<div className="d-flex flex-row flex-md-column align-items-center align-items-md-start">
 							<p className="text-muted mb-2 me-4">Share</p>
-							<div className="d-flex gap-3">
-								<Link href="">
+							<div className="d-flex flex-column gap-3 position-relative">
+								{/* <a href="">
 									<svg
 										className="d-block p-2"
 										style={{ borderRadius: '1000px', border: '1px solid #124143' }}
@@ -140,8 +159,8 @@ const Article = ({ article }) => {
 											fill="#124143"
 										/>
 									</svg>
-								</Link>
-								<Link href="">
+								</a> */}
+								<button onClick={copy} className="align-self-start m-0 p-0 bg-light border-0">
 									<svg
 										className="d-block p-2"
 										style={{ borderRadius: '1000px', border: '1px solid #124143' }}
@@ -160,7 +179,16 @@ const Article = ({ article }) => {
 											fill="#124143"
 										/>
 									</svg>
-								</Link>
+								</button>
+								{copied ? (
+									<div
+										className="px-2 py-1 align-self-start bg-primary position-absolute d-flex align-items-center"
+										style={{ height: '40px', left: '50px' }}>
+										<small className="text-dark m-0 p-0" style={{ whiteSpace: 'nowrap' }}>
+											Link copied to clipboard!
+										</small>
+									</div>
+								) : null}
 							</div>
 						</div>
 					</div>
