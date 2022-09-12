@@ -120,7 +120,7 @@ export default function Footer(props) {
 									/>
 								</svg>
 							</a>
-							<a target="_blank" href="/">
+							{/* <a target="_blank" href="/">
 								<svg
 									className="d-block border border-primary p-2"
 									style={{ borderRadius: '1000px' }}
@@ -143,8 +143,8 @@ export default function Footer(props) {
 										fill="#19E280"
 									/>
 								</svg>
-							</a>
-							<a href="/" target="_blank">
+							</a> */}
+							{/* <a href="/" target="_blank">
 								<svg
 									className="d-block border border-primary p-2"
 									style={{ borderRadius: '1000px' }}
@@ -159,7 +159,7 @@ export default function Footer(props) {
 										fill="#19E280"
 									/>
 								</svg>
-							</a>
+							</a> */}
 						</div>
 						<Link href="/contact">
 							<a className="text-link align-self-center text-primary">Contact us</a>
