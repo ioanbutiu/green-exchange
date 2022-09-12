@@ -104,7 +104,7 @@ export default function Home(props) {
 						</div>
 
 						<div className="mt-4 mb-4">
-							<p className="lead d-block col-12 col-lg-7">
+							<p className="lead d-block col-12 col-lg-6">
 								A new listing and trading venue for the securities of companies that commit to good green governance
 							</p>
 						</div>
