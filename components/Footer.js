@@ -6,10 +6,16 @@ export default function Footer(props) {
 	return (
 		<div className="container-fluid bg-secondary text-primary py-4 py-md-4">
 			<div className="container px-0 px-md-4">
-				<div className="d-flex flex-column flex-md-row  justify-content-between align-items-start py-3 py-md-5">
-					<div className="mx-auto">
+				<div className="d-flex flex-row  justify-content-between py-3 py-md-5">
+					<div className="">
 						<Link href="/">
-							<svg width="154" height="88" viewBox="0 0 154 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<svg
+								className="pe-5 pe-md-1"
+								width="154"
+								height="88"
+								viewBox="0 0 154 88"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
 								<g clipPath="url(#clip0_4847_2606)">
 									<path
 										d="M76.5752 69.2161C76.6892 68.7914 76.8546 68.4103 77.0714 68.0696C77.2882 67.7289 77.5516 67.4399 77.8647 67.1977C78.1762 66.9571 78.5327 66.773 78.9358 66.6471C79.3388 66.5211 79.7788 66.4581 80.259 66.4581C80.882 66.4581 81.4264 66.555 81.8889 66.7504C82.353 66.9458 82.7367 67.23 83.0402 67.6046C83.3437 67.9792 83.5605 68.4345 83.6906 68.969L82.9262 69.1402C82.8267 68.7203 82.6597 68.3603 82.4252 68.0632C82.1892 67.7644 81.8905 67.5351 81.5308 67.3753C81.1695 67.2154 80.7455 67.1347 80.259 67.1347C79.872 67.1347 79.5171 67.1864 79.1991 67.2897C78.8796 67.3931 78.5969 67.5416 78.3496 67.737C78.1023 67.9324 77.8952 68.1713 77.7282 68.4539C77.5612 68.7365 77.4327 69.0578 77.346 69.4163C77.2593 69.7764 77.2143 70.1703 77.2143 70.5982C77.2143 71.0261 77.2577 71.4088 77.346 71.7673C77.4327 72.1274 77.5612 72.4455 77.7282 72.7248C77.8952 73.0042 78.0991 73.2431 78.3384 73.4417C78.5777 73.6404 78.8539 73.7905 79.1654 73.8955C79.4769 73.9988 79.8222 74.0505 80.2028 74.0505C80.8258 74.0505 81.3509 73.9294 81.7765 73.6888C82.202 73.4482 82.5248 73.1075 82.7464 72.6683C82.9664 72.2291 83.0772 71.7108 83.0772 71.115L83.5108 71.3668C83.4883 71.8787 83.3951 72.3421 83.2313 72.7539C83.0675 73.1672 82.8411 73.5176 82.5537 73.8083C82.2646 74.0989 81.9194 74.3218 81.5163 74.4784C81.1133 74.635 80.654 74.7141 80.1369 74.7141C79.6809 74.7141 79.2585 74.6512 78.8715 74.5252C78.4845 74.3993 78.1377 74.2168 77.8342 73.9811C77.5307 73.7437 77.2721 73.4579 77.0586 73.1204C76.845 72.7846 76.6844 72.4035 76.5736 71.9804C76.4628 71.5558 76.4082 71.0956 76.4082 70.5982C76.4082 70.1009 76.466 69.6407 76.5784 69.2161H76.5752ZM80.1787 70.6661H83.7934V74.5995H83.2346L83.143 72.2727L83.0981 71.2974H80.1787V70.6677V70.6661Z"
@@ -102,25 +108,27 @@ export default function Footer(props) {
 							</svg>
 						</Link>
 					</div>
-					<div className="d-flex flex-column flex-md-row w-100 gap-5 mt-5 mt-md-0">
-						<div className="d-flex justify-content-between gap-5 ms-md-auto mx-4 mx-md-0">
-							<a href="https://www.linkedin.com/company/green-impact-exchange/" target="_blank">
-								<svg
-									className="d-block border border-primary p-2"
-									style={{ borderRadius: '1000px' }}
-									width="40"
-									height="40"
-									viewBox="0 0 24 24"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg">
-									<rect width="24" height="24" />
-									<path
-										d="M19.65 3H4.35C3.6 3 3 3.6 3 4.275V19.65C3 20.325 3.6 20.925 4.35 20.925H19.65C20.4 20.925 21 20.325 21 19.65V4.275C21 3.6 20.4 3 19.65 3ZM8.325 18.3H5.7V9.75H8.325V18.3ZM7.05 8.55C6.225 8.55 5.475 7.875 5.475 6.975C5.475 6.075 6.15 5.4 7.05 5.4C7.875 5.4 8.625 6.075 8.625 6.975C8.625 7.875 7.875 8.55 7.05 8.55ZM18.375 18.225H15.75V14.025C15.75 13.05 15.75 11.7 14.325 11.7C12.9 11.7 12.75 12.825 12.75 13.875V18.15H10.125V9.75H12.6V10.875H12.675C13.05 10.2 13.95 9.45 15.225 9.45C17.925 9.45 18.45 11.25 18.45 13.575V18.225H18.375Z"
-										fill="#19E280"
-									/>
-								</svg>
-							</a>
-							{/* <a target="_blank" href="/">
+					<div className="d-flex flex-row gap-5 mt-md-0">
+						<a
+							href="https://www.linkedin.com/company/green-impact-exchange/"
+							target="_blank"
+							className=" align-self-center">
+							<svg
+								className="d-block border border-primary p-2"
+								style={{ borderRadius: '1000px' }}
+								width="40"
+								height="40"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<rect width="24" height="24" />
+								<path
+									d="M19.65 3H4.35C3.6 3 3 3.6 3 4.275V19.65C3 20.325 3.6 20.925 4.35 20.925H19.65C20.4 20.925 21 20.325 21 19.65V4.275C21 3.6 20.4 3 19.65 3ZM8.325 18.3H5.7V9.75H8.325V18.3ZM7.05 8.55C6.225 8.55 5.475 7.875 5.475 6.975C5.475 6.075 6.15 5.4 7.05 5.4C7.875 5.4 8.625 6.075 8.625 6.975C8.625 7.875 7.875 8.55 7.05 8.55ZM18.375 18.225H15.75V14.025C15.75 13.05 15.75 11.7 14.325 11.7C12.9 11.7 12.75 12.825 12.75 13.875V18.15H10.125V9.75H12.6V10.875H12.675C13.05 10.2 13.95 9.45 15.225 9.45C17.925 9.45 18.45 11.25 18.45 13.575V18.225H18.375Z"
+									fill="#19E280"
+								/>
+							</svg>
+						</a>
+						{/* <a target="_blank" href="/">
 								<svg
 									className="d-block border border-primary p-2"
 									style={{ borderRadius: '1000px' }}
@@ -144,7 +152,7 @@ export default function Footer(props) {
 									/>
 								</svg>
 							</a> */}
-							{/* <a href="/" target="_blank">
+						{/* <a href="/" target="_blank">
 								<svg
 									className="d-block border border-primary p-2"
 									style={{ borderRadius: '1000px' }}
@@ -160,7 +168,7 @@ export default function Footer(props) {
 									/>
 								</svg>
 							</a> */}
-						</div>
+
 						<Link href="/contact">
 							<a className="text-link align-self-center text-primary">Contact us</a>
 						</Link>
