@@ -1,32 +1,69 @@
 import Link from 'next/link';
-import { useState } from 'react';
-// import MailchimpForm from 'react-mailchimp-form'
+import React, { useState } from 'react';
 
 export default function Newsletter() {
+	// States htmlFor contact form fields
 	const [email, setEmail] = useState('');
-	const [submitted, setSubmitted] = useState(false);
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		console.log('Sending');
-		let data = {
-			email,
-		};
-		fetch('/api/newsletter', {
-			method: 'POST',
-			headers: {
-				Accept: 'application/json, text/plain, */*',
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(data),
-		}).then((res) => {
-			console.log('Response received');
-			if (res.status === 200) {
-				console.log('Response succeeded!');
-				setSubmitted(true);
-				setEmail('');
-			}
-		});
+
+	//   Form validation state
+	const [errors, setErrors] = useState({});
+
+	//   Setting button text on form submission
+	const [buttonText, setButtonText] = useState('Submit');
+
+	// Setting success or failure messages states
+	const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+	const [showFailureMessage, setShowFailureMessage] = useState(false);
+
+	// Validation check method
+	const handleValidation = () => {
+		let tempErrors = {};
+		let isValid = true;
+
+		if (email.length <= 0) {
+			tempErrors['email'] = true;
+			isValid = false;
+		}
+
+		setErrors({ ...tempErrors });
+		console.log('errors', errors);
+		return isValid;
 	};
+
+	//   Handling form submit
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		console.log(email);
+		let isValidForm = handleValidation();
+
+		if (isValidForm) {
+			setButtonText('Submitting...');
+			const res = await fetch('/api/sendgridNewsletter', {
+				body: JSON.stringify({
+					email: email,
+				}),
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				method: 'POST',
+			});
+
+			const { error } = await res.json();
+			if (error) {
+				console.log(error);
+				setShowSuccessMessage(false);
+				setShowFailureMessage(true);
+				setButtonText('Submit');
+				return;
+			}
+			setShowSuccessMessage(true);
+			setShowFailureMessage(false);
+			setButtonText('Submit');
+		}
+		console.log(email);
+	};
+
 	return (
 		<div className="container-fluid bg-primary text-dark py-4">
 			<div className="container d-flex flex-column flex-md-row align-items-center px-0 px-md-4">
@@ -34,23 +71,24 @@ export default function Newsletter() {
 					<h6>Newsletter</h6>
 					<h4>Stay up to date with our news and insights by subscribing to our regular newsletter</h4>
 				</div>
-				<div className="col-12 col-md-6 d-md-flex">
+				<form className="col-12 col-md-6 d-md-flex" onSubmit={handleSubmit}>
 					<input
-						type="text"
+						type="email"
+						value={email}
 						onChange={(e) => {
 							setEmail(e.target.value);
+							console.log(e.target.value);
 						}}
-						name="name"
+						name="email"
 						className="form-control mt-4 mt-md-0"
 						placeholder="Email address"></input>
-					<a
-						onClick={(e) => {
-							handleSubmit(e);
-						}}
-						className="text-link align-self-center text-dark border-dark ms-0 ms-md-5 mt-4 mt-md-0">
-						Submit
-					</a>
-				</div>
+					<button
+						type="submit"
+						className="text-link mt-4 bg-primary align-self-center text-dark border-dark ms-0 ms-md-5 mt-4 mt-md-0"
+						style={{ border: 'none', color: '#000', borderBottom: '1px solid #000' }}>
+						{buttonText}
+					</button>
+				</form>
 			</div>
 		</div>
 	);
