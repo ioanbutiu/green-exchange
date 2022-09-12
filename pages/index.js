@@ -37,22 +37,30 @@ export default function Home(props) {
 					autoPlay
 					loop
 					muted
+					playsInline
 					poster="/home-video-poster.webp"
-					src="https://www.dropbox.com/s/4moevow4u68l253/home-hero-comp.mp4?raw=1"
+					src="/Pre-comp-2-2.mp4"
 					style={{
 						position: 'absolute',
-						minWidth: '100%',
-						minHeight: '100%',
-						top: '48%',
-						transform: 'translateY(-50%)',
-						margin: '0',
+						width: '100%',
+						height: '100%',
 						zIndex: '-100',
 						objectFit: 'cover',
 					}}></video>
+
+				{/* <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
+					<iframe
+						src="https://player.vimeo.com/video/748801319?h=71230c8e13&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+						frameborder="0"
+						allow="autoplay; fullscreen; picture-in-picture"
+						style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%' }}
+						title="Pre-comp 2"></iframe>
+				</div>*/}
+
 				<div
 					className="d-block d-md-none w-100"
 					style={{
-						position: 'absolute',
+						position: 'relative',
 						width: '100%',
 						height: '100%',
 						zIndex: '-100',
@@ -60,7 +68,30 @@ export default function Home(props) {
 						backgroundPosition: '10% 50%',
 						backgroundImage: 'url(/gix-icon-water.webp)',
 					}}></div>
-				<div className="container h-100 py-4 text-light d-flex flex-column justify-content-end bg-transparent">
+
+				{/* <div className="position-relative" style={{ top: '0', zIndex: '-100' }}>
+					<div className="d-none d-md-block" style={{ padding: '56.25% 0 0 0', zIndex: '-100' }}>
+						<iframe
+							src="https://player.vimeo.com/video/748801319?h=71230c8e13&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;background=1"
+							frameborder="0"
+							allow="autoplay"
+							style={{
+								position: 'absolute',
+								border: '0',
+								top: '0',
+								right: '0',
+								width: '100%',
+								height: '100%',
+								zIndex: '-200',
+							}}
+							title="Pre-comp 2"></iframe>
+					</div>
+					<script src="https://player.vimeo.com/api/player.js"></script>
+				</div> */}
+
+				<div
+					className="container h-100 py-4 text-light d-flex flex-column justify-content-end bg-transparent position-absolute"
+					style={{ zIndex: '100', top: '0', width: '100%', right: '0', left: '0' }}>
 					<div className="">
 						<div>
 							{' '}
@@ -72,8 +103,8 @@ export default function Home(props) {
 							</h1>{' '}
 						</div>
 
-						<div className="mt-4 mb-5 w-md-50">
-							<p className="lead">
+						<div className="mt-4 mb-4">
+							<p className="lead d-block col-12 col-lg-7">
 								A new listing and trading venue for the securities of companies that commit to good green governance
 							</p>
 						</div>
