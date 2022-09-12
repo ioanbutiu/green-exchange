@@ -12,9 +12,6 @@ function urlFor(source) {
 }
 
 export default function News({ content, articles }) {
-	console.log(content);
-	console.log(articles);
-
 	const { title, hero } = content;
 	return (
 		<div className="">

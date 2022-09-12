@@ -33,7 +33,7 @@ export default function Home(props) {
 					position: 'relative',
 				}}>
 				<video
-					className="d-block w-100"
+					className="d-none d-md-block w-100"
 					autoPlay
 					loop
 					muted
@@ -49,6 +49,17 @@ export default function Home(props) {
 						zIndex: '-100',
 						objectFit: 'cover',
 					}}></video>
+				<div
+					className="d-block d-md-none w-100"
+					style={{
+						position: 'absolute',
+						width: '100%',
+						height: '100%',
+						zIndex: '-100',
+						backgroundSize: 'cover',
+						backgroundPosition: '10% 50%',
+						backgroundImage: 'url(/gix-icon-water.webp)',
+					}}></div>
 				<div className="container h-100 py-4 text-light d-flex flex-column justify-content-end bg-transparent">
 					<div className="">
 						<div>
