@@ -11,7 +11,7 @@ export default function FAQSeciton(props) {
 				{items &&
 					items.map((item) => {
 						return (
-							<div>
+							<div key={item._key}>
 								<Accordion.Item eventKey={eventKey++}>
 									<Accordion.Header>{item.question}</Accordion.Header>
 									<Accordion.Body>

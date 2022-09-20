@@ -64,11 +64,11 @@ const Article = ({ article }) => {
 
 	return (
 		<div>
-			{/* <Head>
+			<Head>
 				<title>{title}</title>
 				<meta name="description" content="" />
 				<link rel="icon" href="/favicon.ico" />
-			</Head> */}
+			</Head>
 			<article style={{ marginBottom: '4rem' }}>
 				<div className="bg-secondary" style={{ paddingTop: '91px' }}>
 					<div

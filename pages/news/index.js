@@ -15,11 +15,11 @@ export default function News({ content, articles }) {
 	const { title, hero } = content;
 	return (
 		<div className="">
-			{/* <Head>
+			<Head>
 				<title>{title}</title>
 				<meta name="description" content="" />
 				<link rel="icon" href="/favicon.ico" />
-			</Head> */}
+			</Head>
 			<Hero {...hero} />
 			<main className="container">
 				<div className="row py-5">

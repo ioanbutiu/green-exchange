@@ -9,11 +9,11 @@ export default function FAQ(props) {
 	const { title, hero, general, issuers, investors } = props;
 	return (
 		<div className="">
-			{/* <Head>
+			<Head>
 				<title>{title}</title>
 				<meta name="description" content="" />
 				<link rel="icon" href="/favicon.ico" />
-			</Head> */}
+			</Head>
 			<Hero {...hero} />
 			<main className="container">
 				<FAQSection title="General Questions" items={general} />

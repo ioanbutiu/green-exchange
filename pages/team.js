@@ -13,14 +13,13 @@ function urlFor(source) {
 
 export default function Team(props) {
 	const { title, hero, team, board } = props;
-	console.log(team[0].linkedIn);
 	return (
 		<div className="">
-			{/* <Head>
+			<Head>
 				<title>{title}</title>
 				<meta name="description" content="" />
 				<link rel="icon" href="/favicon.ico" />
-			</Head> */}
+			</Head>
 			<Hero {...hero} />
 			<main className="container">
 				<h4>GIX Team</h4>

@@ -91,11 +91,11 @@ export default function Contact(props) {
 
 	return (
 		<div className="">
-			{/* <Head>
+			<Head>
 				<title>{title}</title>
 				<meta name="description" content="" />
 				<link rel="icon" href="/favicon.ico" />
-			</Head> */}
+			</Head>
 			<Hero {...hero} />
 			<main className="container">
 				<div className="row" style={{ minHeight: '80vh' }}>

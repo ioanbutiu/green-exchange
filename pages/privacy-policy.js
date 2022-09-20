@@ -8,6 +8,11 @@ export default function PrivacyPolicy(props) {
 	const { hero, textSection } = props;
 	return (
 		<div>
+			<Head>
+				<title>Privacy Policy</title>
+				<meta name="description" content="" />
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
 			<Hero {...hero} />
 			<div className="container-fluid bg-light text-dark py-3 my-3">
 				<div className="container px-0 px-md-4 py-4">
