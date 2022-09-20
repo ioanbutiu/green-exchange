@@ -76,9 +76,9 @@ export default function Home(props) {
 						<video
 							width="100%"
 							height="100%"
-							muted="true"
-							loop="true"
-							autoplay="true"
+							muted={true}
+							loop={true}
+							autoPlay={true}
 							style={{
 								objectFit: 'cover',
 							}}
