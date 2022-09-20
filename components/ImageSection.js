@@ -23,7 +23,7 @@ export default function ImageSection({ direction, props }) {
 						<Cta {...cta} />
 					</div>
 				</div>
-				{image && <img src={urlFor(image).url()} className="col-12 col-lg-6" />}
+				{image && <img src={urlFor(image).auto('format').url()} className="col-12 col-lg-6" />}
 			</div>
 		</div>
 	);
