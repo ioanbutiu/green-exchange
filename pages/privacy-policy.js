@@ -1,6 +1,7 @@
 import client from '../client';
 import groq from 'groq';
 import { PortableText } from '@portabletext/react';
+import Head from 'next/head';
 
 import Hero from '../components/Hero';
 

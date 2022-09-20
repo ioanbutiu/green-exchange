@@ -7,7 +7,7 @@ import JoinUs from '../components/JoinUs';
 import React, { useState } from 'react';
 
 export default function Contact(props) {
-	const { hero, info } = props;
+	const { title, hero, info } = props;
 
 	// States htmlFor contact form fields
 	const [name, setName] = useState('');
