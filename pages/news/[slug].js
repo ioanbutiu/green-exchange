@@ -160,16 +160,18 @@ const Article = ({ article }) => {
 										/>
 									</svg>
 								</a> */}
-								<button onClick={copy} className="align-self-start m-0 p-0 bg-light border-0">
+								<button
+									onClick={copy}
+									className="align-self-start m-0 p-0 bg-light"
+									style={{ borderRadius: '100%', border: '1px solid #124143', overflow: 'hidden' }}>
 									<svg
-										className="d-block p-2"
-										style={{ borderRadius: '1000px', border: '1px solid #124143' }}
+										className="d-block p-2 icon-link-secondary"
 										width="40"
 										height="40"
 										viewBox="0 0 24 24"
 										fill="none"
 										xmlns="http://www.w3.org/2000/svg">
-										<rect width="24" height="24" fill="white" />
+										<rect width="24" height="24" fill="none" />
 										<path
 											d="M21.9376 5.06989C21.5195 4.65037 21.0228 4.3175 20.4758 4.09038C19.9288 3.86325 19.3424 3.74634 18.7501 3.74634C18.1578 3.74634 17.5714 3.86325 17.0244 4.09038C16.4774 4.3175 15.9807 4.65037 15.5626 5.06989L16.6276 6.13489C16.9068 5.85566 17.2383 5.63417 17.6031 5.48306C17.968 5.33194 18.359 5.25416 18.7538 5.25416C19.1487 5.25416 19.5397 5.33194 19.9046 5.48306C20.2694 5.63417 20.6009 5.85566 20.8801 6.13489C21.1593 6.41411 21.3808 6.7456 21.5319 7.11042C21.683 7.47524 21.7608 7.86626 21.7608 8.26114C21.7608 8.65602 21.683 9.04703 21.5319 9.41185C21.3808 9.77668 21.1593 10.1082 20.8801 10.3874L14.8801 16.3874C14.3172 16.9513 13.5533 17.2685 12.7565 17.2692C11.9597 17.2699 11.1953 16.9541 10.6313 16.3911C10.0674 15.8282 9.75023 15.0643 9.74953 14.2675C9.74883 13.4707 10.0647 12.7063 10.6276 12.1424L11.6851 11.0774L10.6276 10.0124L9.5626 11.0774C9.14308 11.4955 8.81021 11.9922 8.58309 12.5392C8.35597 13.0862 8.23905 13.6726 8.23905 14.2649C8.23905 14.8571 8.35597 15.4436 8.58309 15.9906C8.81021 16.5376 9.14308 17.0343 9.5626 17.4524C10.4112 18.2901 11.5577 18.7568 12.7501 18.7499C13.3446 18.7523 13.9338 18.6369 14.4834 18.4104C15.0331 18.1838 15.5325 17.8506 15.9526 17.4299L21.9526 11.4299C22.7933 10.5841 23.264 9.43929 23.2611 8.24678C23.2583 7.05428 22.7823 5.91165 21.9376 5.06989Z"
 											fill="#124143"
@@ -180,15 +182,18 @@ const Article = ({ article }) => {
 										/>
 									</svg>
 								</button>
-								{copied ? (
-									<div
-										className="px-2 py-1 align-self-start bg-primary position-absolute d-flex align-items-center"
-										style={{ height: '40px', left: '50px' }}>
-										<small className="text-dark m-0 p-0" style={{ whiteSpace: 'nowrap' }}>
-											Link copied to clipboard!
-										</small>
-									</div>
-								) : null}
+
+								<div
+									className={
+										copied
+											? 'copy-success px-3 py-1 align-self-start bg-primary position-absolute d-flex align-items-center opacity-100 rounded-2'
+											: 'copy-success px-3 py-1 align-self-start bg-primary position-absolute d-flex align-items-center opacity-0 rounded-2'
+									}
+									style={{ height: '40px', left: '50px' }}>
+									<small className="text-dark m-0 p-0" style={{ whiteSpace: 'nowrap' }}>
+										Link copied to clipboard!
+									</small>
+								</div>
 							</div>
 						</div>
 					</div>

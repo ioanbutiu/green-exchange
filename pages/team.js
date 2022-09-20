@@ -43,7 +43,7 @@ export default function Team(props) {
 								{typeof member.linkedIn != 'undefined' ? (
 									<a href={member.linkedIn} target="_blank" className="">
 										<svg
-											className="d-block p-2"
+											className="d-block p-2 icon-link-orange"
 											style={{ borderRadius: '1000px', border: '1px solid #ff704a' }}
 											width="40"
 											height="40"

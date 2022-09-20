@@ -114,7 +114,7 @@ export default function Footer(props) {
 							target="_blank"
 							className=" align-self-center">
 							<svg
-								className="d-block border border-primary p-2"
+								className="d-block border border-primary p-2 icon-link-primary"
 								style={{ borderRadius: '1000px' }}
 								width="40"
 								height="40"

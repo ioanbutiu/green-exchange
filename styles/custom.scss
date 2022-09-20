@@ -340,3 +340,43 @@ html {
 		width: 100%;
 	}
 }
+
+.icon-link-primary,
+.icon-link-secondary,
+.icon-link-orange {
+	transition: background-color 0.2s ease-out;
+}
+
+.icon-link-primary > path,
+.icon-link-secondary > path,
+.icon-link-orange {
+	transition: fill 0.2s ease-out;
+}
+
+.icon-link-primary:hover {
+	background-color: $primary;
+}
+
+.icon-link-primary:hover > path {
+	fill: $secondary !important;
+}
+
+.icon-link-orange:hover {
+	background-color: map-get($custom-colors, custom-orange);
+}
+
+.icon-link-orange:hover > path {
+	fill: #fff !important;
+}
+
+.icon-link-secondary:hover {
+	background-color: $secondary;
+}
+
+.icon-link-secondary:hover > path {
+	fill: #fff !important;
+}
+
+.copy-success {
+	transition: opacity 0.2s ease-out;
+}
