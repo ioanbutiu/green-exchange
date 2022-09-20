@@ -4,7 +4,7 @@ export default function Document() {
 	return (
 		<Html>
 			<Head>
-				{/*<Google tag (gtag.js)*/}
+				{/* <Google tag (gtag.js)
 				<script
 					async
 					src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}></script>
@@ -19,7 +19,7 @@ export default function Document() {
                 page_path: window.location.pathname,
               });`,
 					}}
-				/>
+				/> */}
 			</Head>
 			<body>
 				<Main />
