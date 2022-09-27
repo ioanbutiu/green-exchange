@@ -2,7 +2,7 @@ import Head from 'next/head';
 import client from '../client';
 import groq from 'groq';
 import { PortableText } from '@portabletext/react';
-import Link from 'next/Link';
+import Link from 'next/link';
 
 import Hero from '../components/Hero';
 import JoinUs from '../components/JoinUs';
