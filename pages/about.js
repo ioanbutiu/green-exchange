@@ -2,6 +2,7 @@ import Head from 'next/head';
 import client from '../client';
 import groq from 'groq';
 import { PortableText } from '@portabletext/react';
+import Link from 'next/Link';
 
 import Hero from '../components/Hero';
 import JoinUs from '../components/JoinUs';
@@ -43,6 +44,22 @@ export default function About(props) {
 						poster="/video-poster-2.webp">
 						Sorry, your browser doesn't support embedded videos.
 					</video>
+
+					<Link href="https://www.youtube.com/watch?v=HOfLxT5a9Tc" className="d-flex align-items-end">
+						<a target="_blank" className="video-link">
+							Watch the entire interview on YouTube{' '}
+							<svg
+								className="d-none d-md-inline-block"
+								width="24"
+								height="24"
+								viewBox="0 0 16 16"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<rect width="16" height="16" fill="white" style={{}} />
+								<path d="M5 3V4H11.295L3 12.295L3.705 13L12 4.705V11H13V3H5Z" fill="#FF704A" />
+							</svg>
+						</a>
+					</Link>
 				</div>
 				<div
 					className={

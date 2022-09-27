@@ -380,3 +380,7 @@ html {
 .copy-success {
 	transition: opacity 0.2s ease-out;
 }
+
+.video-link:hover path {
+	fill: #e75f3a;
+}
