@@ -19,7 +19,7 @@ function App({ Component, pageProps }) {
 		//  - This must be an exact match of your domain.
 		//  - If you're using www. for your domain, make sure you include that here.
 		Fathom.load('MMRXHNOJ', {
-			includedDomains: ['www.thegix.com', 'www.greenexchange.us'],
+			includedDomains: ['www.thegix.com', 'www.greenexchange.us', 'www.tradegix.com'],
 		});
 
 		function onRouteChangeComplete() {
