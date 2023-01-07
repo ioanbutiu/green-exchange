@@ -4,7 +4,9 @@ import groq from 'groq';
 import { PortableText } from '@portabletext/react';
 import Hero from '../components/Hero';
 import JoinUs from '../components/JoinUs';
+import Newsletter from '../components/Newsletter';
 import React, { useState } from 'react';
+import { CheckmarkOutline, Error } from '@carbon/icons-react';
 
 export default function Contact(props) {
 	const { title, hero, info } = props;
@@ -24,6 +26,7 @@ export default function Contact(props) {
 	// Setting success or failure messages states
 	const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 	const [showFailureMessage, setShowFailureMessage] = useState(false);
+	const [showValidationMessage, setShowValidationMessage] = useState(false);
 
 	// Validation check method
 	const handleValidation = () => {
@@ -38,10 +41,10 @@ export default function Contact(props) {
 			tempErrors['email'] = true;
 			isValid = false;
 		}
-		if (company.length <= 0) {
-			tempErrors['company'] = true;
-			isValid = false;
-		}
+		// if (company.length <= 0) {
+		// 	tempErrors['company'] = true;
+		// 	isValid = false;
+		// }
 		if (message.length <= 0) {
 			tempErrors['message'] = true;
 			isValid = false;
@@ -60,6 +63,7 @@ export default function Contact(props) {
 		let isValidForm = handleValidation();
 
 		if (isValidForm) {
+			setShowValidationMessage(false);
 			setButtonText('Submitting...');
 			const res = await fetch('/api/sendgrid', {
 				body: JSON.stringify({
@@ -85,8 +89,13 @@ export default function Contact(props) {
 			setShowSuccessMessage(true);
 			setShowFailureMessage(false);
 			setButtonText('Submit');
+			setName('');
+			setEmail('');
+			setCompany('');
+			setMessage('');
 		}
 		console.log(name, email, company, message);
+		setShowValidationMessage(true);
 	};
 
 	return (
@@ -100,10 +109,10 @@ export default function Contact(props) {
 			<main className="container">
 				<div className="row" style={{ minHeight: '80vh' }}>
 					<div className="col-12 col-md-6 ps-md-5">
-						<form className="mb-5" onSubmit={handleSubmit}>
+						<form className="mb-4" onSubmit={handleSubmit}>
 							<div className="mb-3">
 								<label htmlFor="name" className="form-label small">
-									Name
+									Name <span style={{ color: 'red' }}>*</span>
 								</label>
 								<input
 									type="text"
@@ -132,7 +141,7 @@ export default function Contact(props) {
 							</div>
 							<div className="mb-3">
 								<label htmlFor="email" className="form-label small">
-									Email address
+									Email address <span style={{ color: 'red' }}>*</span>
 								</label>
 								<input
 									type="email"
@@ -146,7 +155,7 @@ export default function Contact(props) {
 							</div>
 							<div className="mb-3">
 								<label htmlFor="message" className="form-label small">
-									Message
+									Message <span style={{ color: 'red' }}>*</span>
 								</label>
 								<textarea
 									name="message"
@@ -158,13 +167,37 @@ export default function Contact(props) {
 									style={{ minHeight: '200px' }}
 								/>
 							</div>
+							<span style={{ color: 'red' }}>*</span> <span className="form-label small">Indicates required field</span>
 							<button
 								type="submit"
-								className="text-link mt-4 bg-light"
+								className="text-link mt-4 bg-light d-block"
 								style={{ border: 'none', color: '#ff704a', borderBottom: '1px solid #ff704a' }}>
 								{buttonText}
 							</button>
 						</form>
+						{showSuccessMessage ? (
+							<div className="d-flex" style={{ color: '#1c9d39' }}>
+								<CheckmarkOutline size={24} className="flex-shrink-0 me-2" />
+								Thank you for contacting us. We'll get back to you as soon as possible.
+							</div>
+						) : null}
+						{showFailureMessage ? (
+							<div className="d-flex" style={{ color: 'red' }}>
+								<Error size={24} className="flex-shrink-0 me-2" />
+								<p className="">
+									There was an error processing your request. Please try again, or email us directly at{' '}
+									<a href="mailto:info@greenexchange.us" style={{ color: 'red' }}>
+										info@greenexchange.us
+									</a>
+								</p>
+							</div>
+						) : null}
+						{showValidationMessage ? (
+							<div className="d-flex" style={{ color: 'red' }}>
+								<Error size={24} className="flex-shrink-0 me-2" />
+								<p className="">Please fill out the required fields.</p>
+							</div>
+						) : null}
 					</div>
 					<div className="col-12 col-md-6 pe-md-5 contact-info-container">
 						<PortableText value={info} />
@@ -247,6 +280,7 @@ export default function Contact(props) {
 			</form> */}
 
 			<JoinUs />
+			<Newsletter />
 		</div>
 	);
 }
