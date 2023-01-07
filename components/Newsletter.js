@@ -67,9 +67,10 @@ export default function Newsletter() {
 			setShowValidationMessage(false);
 			setButtonText('Submit');
 			setEmail('');
+		} else {
+			setShowValidationMessage(true);
 		}
 		console.log(email);
-		setShowValidationMessage(true);
 	};
 
 	return (

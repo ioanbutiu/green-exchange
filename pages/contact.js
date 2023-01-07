@@ -95,9 +95,10 @@ export default function Contact(props) {
 			setEmail('');
 			setCompany('');
 			setMessage('');
+		} else {
+			setShowValidationMessage(true);
 		}
 		console.log(name, email, company, message);
-		setShowValidationMessage(true);
 	};
 
 	return (
