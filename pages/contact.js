@@ -83,11 +83,13 @@ export default function Contact(props) {
 				console.log(error);
 				setShowSuccessMessage(false);
 				setShowFailureMessage(true);
+				setShowValidationMessage(false);
 				setButtonText('Submit');
 				return;
 			}
 			setShowSuccessMessage(true);
 			setShowFailureMessage(false);
+			setShowValidationMessage(false);
 			setButtonText('Submit');
 			setName('');
 			setEmail('');

@@ -58,11 +58,13 @@ export default function Newsletter() {
 				console.log(error);
 				setShowSuccessMessage(false);
 				setShowFailureMessage(true);
+				setShowValidationMessage(false);
 				setButtonText('Submit');
 				return;
 			}
 			setShowSuccessMessage(true);
 			setShowFailureMessage(false);
+			setShowValidationMessage(false);
 			setButtonText('Submit');
 			setEmail('');
 		}
