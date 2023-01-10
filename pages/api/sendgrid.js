@@ -7,7 +7,7 @@ async function sendEmail(req, res) {
 		console.log('REQ.BODY', req.body);
 		await sendgrid.send({
 			to: ['ioan.butiu@gmail.com', 'info@tradegix.com'], // Your email where you'll receive emails
-			from: 'info@greenexchange.us', // your website email address here
+			from: 'info@tradegix.com', // your website email address here
 			subject: `GIX Contact Form`,
 			html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
       <html lang="en">
